@@ -202,3 +202,53 @@ p {
         opacity: 0;
     }
 }
+
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
+    body {
+        flex-direction: column; /* Stack sections vertically */
+        gap: 0.5rem; /* Reduce spacing between sections */
+    }
+
+    header {
+        margin: 0; /* Remove side margins */
+        padding: 0.5rem; /* Reduce padding */
+        border-radius: 0; /* Remove rounded corners */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center; /* Center navigation items */
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Add vertical spacing between items */
+    }
+
+    section {
+        flex: 1 1 100%; /* Make sections take full width */
+        padding: 1rem; /* Reduce padding */
+        margin: 0.5rem 0; /* Reduce margin */
+    }
+
+    .profile-img {
+        width: 150px; /* Reduce image size */
+        height: 150px;
+    }
+
+    .btn {
+        padding: 0.5rem; /* Adjust button padding */
+        font-size: 0.9rem; /* Reduce font size */
+    }
+
+    footer {
+        margin: 0; /* Remove side margins */
+        padding: 0.5rem; /* Reduce padding */
+        border-radius: 0; /* Remove rounded corners */
+    }
+
+    .animated-text {
+        font-size: 1rem; /* Adjust font size */
+        height: 1.5rem; /* Adjust height */
+    }
+}
