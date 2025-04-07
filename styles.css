@@ -37,7 +37,7 @@ nav ul li a {
 
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-columns: 1fr 1fr; /* Two equal columns for larger screens */
     gap: 1rem; /* Add spacing between columns */
     padding: 1rem;
 }
@@ -315,5 +315,59 @@ p {
     .animated-text {
         font-size: 1rem; /* Adjust font size */
         height: 1.5rem; /* Adjust height */
+    }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center; /* Center navigation items */
+    }
+
+    header nav ul li {
+        margin: 0.5rem 0; /* Add vertical spacing between items */
+    }
+
+    #home {
+        padding: 2rem 1rem; /* Adjust padding for smaller screens */
+    }
+
+    #contact ul {
+        flex-direction: column; /* Stack contact links vertically */
+        align-items: center;
+    }
+
+    #contact ul li {
+        margin: 0.5rem 0; /* Add spacing between contact items */
+    }
+
+    footer {
+        padding: 1rem; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Responsive styles for very small screens (mobile) */
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.5rem; /* Reduce font size for headings */
+    }
+
+    p {
+        font-size: 1rem; /* Reduce font size for paragraphs */
+    }
+
+    .profile-img {
+        width: 150px; /* Reduce profile image size */
+        height: 150px;
+    }
+
+    button {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 0.5rem; /* Adjust button padding */
     }
 }
