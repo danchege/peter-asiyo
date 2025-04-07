@@ -5,10 +5,9 @@ body {
     box-sizing: border-box;
     color: white;
     background-color: black;
-    display: flex; /* Enables flexbox for the body */
-    flex-wrap: wrap; /* Allows wrapping of sections */
-    justify-content: center; /* Centers the content horizontally */
-    gap: 1rem; /* Adds spacing between sections */
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
 }
 
 header {
@@ -36,8 +35,24 @@ nav ul li a {
     text-decoration: none;
 }
 
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 1rem; /* Add spacing between columns */
+    padding: 1rem;
+}
+
+main section {
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
 section {
-    flex: 1 1 45%; /* Each section takes up 45% of the width */
+    flex: 1 0 auto; /* Allow sections to grow and take up available space */
     padding: 2rem;
     text-align: center;
     border: 2px solid white;
@@ -52,7 +67,7 @@ section {
     background-color: #09020e; /* Purple-black for Home */
     padding: 3rem 2rem;
     color: white;
-    border:none; /* Removes the border for the home section */
+    border: none; /* Removes the border for the home section */
 }
 
 #about {
@@ -73,6 +88,61 @@ section {
 #contact {
     background-color: #4a4a99; /* Light indigo for Contact */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    padding: 1rem 0; /* Adjust padding for consistency */
+    border-top: 2px solid white; /* Adds a border above the contact section */
+    border-radius: 10px; /* Rounds the corners */
+    margin: 0 1rem; /* Adds spacing on the sides */
+    display: flex; /* Enables Flexbox for layout */
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    flex-wrap: wrap; /* Allows wrapping of items if needed */
+    gap: 1rem; /* Adds spacing between items */
+}
+
+#contact ul {
+    list-style: none;
+    display: flex; /* Enables Flexbox for the list */
+    justify-content: center; /* Centers the list items horizontally */
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Allows wrapping of list items */
+    gap: 1rem; /* Adds spacing between list items */
+}
+
+#contact ul li {
+    display: inline-block; /* Makes the list items inline */
+    background-color: #0ddada; /* Button background color */
+    color: white; /* Button text color */
+    padding: 0.5rem 1rem; /* Adds padding for the button-like appearance */
+    border-radius: 10px; /* Rounds the corners */
+    text-align: center; /* Centers the text inside the button */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#contact ul li:hover {
+    background-color: #555; /* Slightly lighter background on hover */
+}
+
+#other-services {
+    background-color: #5a5aad; /* Light purple for Other Services */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+    border: 2px solid white;
+    border-radius: 15px;
+    margin: 1rem;
+    text-align: center;
+}
+
+#other-services ul {
+    list-style: none;
+    text-align: left; /* Aligns the list items to the left */
+    padding: 0;
+}
+
+#other-services ul li {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
 }
 
 .profile-img {
@@ -101,10 +171,10 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem 0;
-    margin-top: 2rem;
     border-top: 2px solid white; /* Adds a border above the footer */
     border-radius: 10px; /* Rounds the corners of the footer */
     margin: 0 1rem; /* Adds spacing on the sides */
+    flex-shrink: 0; /* Prevent the footer from shrinking */
 }
 
 p {
@@ -128,22 +198,6 @@ p {
 
 #services ul li:hover {
     background-color: #000000; /* Slightly lighter background on hover */
-}
-
-#contact ul li {
-    display: inline-block; /* Makes the list items inline */
-    background-color: #0ddada; /* Dark background for the button */
-    color: rgb(226, 122, 122); /* White text for contrast */
-    padding: 0.5rem 1rem; /* Adds padding for the button-like appearance */
-    margin: 0.5rem; /* Adds spacing between buttons */
-    border-radius: 10px; /* Rounds the corners */
-    text-align: center; /* Centers the text inside the button */
-    cursor: pointer; /* Changes the cursor to a pointer on hover */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-#contact ul li:hover {
-    background-color: #555; /* Slightly lighter background on hover */
 }
 
 .social-icon {
@@ -185,6 +239,11 @@ p {
     animation-delay: 4s;
 }
 
+.footer{
+    width:40%;
+    margin:0 auto; /* Center the footer */
+    display: flex; /* Enables Flexbox for layout */
+}
 @keyframes slide {
     0% {
         opacity: 0;
@@ -245,6 +304,12 @@ p {
         margin: 0; /* Remove side margins */
         padding: 0.5rem; /* Reduce padding */
         border-radius: 0; /* Remove rounded corners */
+        text-align: center;
+    }
+    .footer{
+        align-items: center; /* Center the footer content */
+        margin:0 auto; /* Center the footer */
+        width: 100%; /* Make the footer take full width */
     }
 
     .animated-text {
